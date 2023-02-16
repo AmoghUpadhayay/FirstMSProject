@@ -1,0 +1,13 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: user-microservice
+          uri: lb://user-microservice
+          predicates:
+            - Path=/user/**
+        - id: contact-microservice
+          uri: lb://contact-microservice
+          predicates:
+            - Path=/contact/**
+
